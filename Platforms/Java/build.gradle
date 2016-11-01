@@ -27,7 +27,11 @@ dependencies {
     // common libs
     compile 'commons-cli:commons-cli:1.3.1'
     compile 'org.apache.logging.log4j:log4j-core:2.6.2'
+<<<<<<< HEAD
     compile 'org.apache.commons:commons-pool2:2.2'
+=======
+    compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.2'
+>>>>>>> 31cfe0c4acbae9b09ea10eb15fa49846a08b9f36
 
     // mqtt
     compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
@@ -39,18 +43,22 @@ dependencies {
 
     // spark web frameworks
     compile 'com.sparkjava:spark-core:2.5'
+<<<<<<< HEAD
 
     // front page
     compile 'com.sparkjava:spark-template-thymeleaf:2.3'
 
     testCompile 'junit:junit:4.11'
+=======
+    compile 'com.sparkjava:spark-template-mustache:2.3'
+>>>>>>> 31cfe0c4acbae9b09ea10eb15fa49846a08b9f36
 }
 
 // static code analyze with findbugs
 tasks.withType(FindBugs) {
     reports {
-        xml.enabled = true
-        html.enabled = false
+        xml.enabled = false
+        html.enabled = true
     }
     exclude '**/com/pi4j/*'
     classes = classes.filter {
